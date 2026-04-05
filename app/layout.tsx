@@ -6,7 +6,6 @@ import { cn } from "@/lib/utils";
 const spaceGrotesk = Space_Grotesk({
   variable: '--font-spaceGrotesk',
   subsets: ['latin'],
-  weight: ['400', '600']
 })
 
 const geistSans = Geist({
