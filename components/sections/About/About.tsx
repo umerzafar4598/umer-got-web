@@ -2,6 +2,7 @@
 import cardData from "./CardData";
 import AboutCard from "./AboutCard";
 import { motion } from 'motion/react'
+import { GlowingEffect } from "@/components/ui/glowing-effect";
 import type { Variants } from "motion/react";
 import { stagger } from "motion";
 
@@ -82,15 +83,15 @@ const About = () => {
 
                         {/* Quick Stats */}
                         <div className="grid grid-cols-3 gap-4 mt-8">
-                            <div className="text-center p-4 bg-white/5 rounded-lg border border-white/10">
+                            <div className="text-center hover:shadow-[0_10px_60px_-15px_rgba(0,255,136)] transition-all duration-300 p-4 bg-white/5 rounded-lg border border-primary">
                                 <div className="text-3xl font-bold text-primary">6+</div>
                                 <div className="text-sm text-gray-400 mt-1">Months</div>
                             </div>
-                            <div className="text-center p-4 bg-white/5 rounded-lg border border-white/10">
+                            <div className="text-center hover:shadow-[0_10px_60px_-15px_rgba(0,255,255)] transition-all duration-300 p-4 bg-white/5 rounded-lg border border-accent">
                                 <div className="text-3xl font-bold text-accent">2</div>
                                 <div className="text-sm text-gray-400 mt-1">Projects</div>
                             </div>
-                            <div className="text-center p-4 bg-white/5 rounded-lg border border-white/10">
+                            <div className="text-center hover:shadow-[0_10px_60px_-15px_rgba(0,255,136)] transition-all duration-300 p-4 bg-white/5 rounded-lg border border-primary">
                                 <div className="text-3xl font-bold text-primary">100%</div>
                                 <div className="text-sm text-gray-400 mt-1">Dedicated</div>
                             </div>
@@ -126,6 +127,15 @@ const About = () => {
                             data-aos='zoom-in-up'
                             className="p-6 bg-white/5 rounded-lg border border-white/10"
                         >
+                            <GlowingEffect
+                                blur={0}
+                                borderWidth={3}
+                                spread={80}
+                                glow={true}
+                                disabled={false}
+                                proximity={64}
+                                inactiveZone={0.01}
+                            />
                             <div className="text-primary font-semibold mb-2">Higher Secondary School Certificate (HSSC)</div>
                             <div className="text-white font-medium">Federal Abdali College Chamanabad</div>
                             <div className="text-gray-400 text-sm mt-1">July 2020 - July 2022</div>
@@ -135,6 +145,15 @@ const About = () => {
                             data-aos='zoom-in-up'
                             className="p-6 bg-white/5 rounded-lg border border-white/10"
                         >
+                            <GlowingEffect
+                                blur={0}
+                                borderWidth={3}
+                                spread={80}
+                                glow={true}
+                                disabled={false}
+                                proximity={64}
+                                inactiveZone={0.01}
+                            />
                             <div className="text-accent font-semibold mb-2">The Complete Web Development Bootcamp</div>
                             <div className="text-white font-medium">Angela Yu - Udemy</div>
                             <div className="text-gray-400 text-sm mt-1">Self-Paced Online Course</div>

@@ -2,6 +2,7 @@
 import { TypeAnimation } from "react-type-animation"
 import type { Variants } from "motion/react";
 import { motion, stagger } from 'motion/react'
+import { Spotlight } from "@/components/ui/spotlight";
 import { LuGithub, LuLinkedin } from "react-icons/lu";
 import { FaArrowDown } from "react-icons/fa";
 import { FiPhone } from "react-icons/fi";
@@ -39,6 +40,10 @@ const items: Variants = {
 const Hero = () => {
     return (
         <section id='hero' className="min-h-screen bg-foreground overflow-hidden pt-20">
+            <Spotlight
+                className="-top-40 left-0 md:-top-20 md:left-60"
+                fill="cyan"
+            />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <motion.div
                     variants={container}
