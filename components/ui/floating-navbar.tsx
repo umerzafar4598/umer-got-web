@@ -61,16 +61,18 @@ export const FloatingNav = ({
           {/* Nav items container */}
           <div className="flex items-center gap-1">
             {navItems.map((navItem, idx: number) => (
-              <a
+              <motion.a
+                whileHover={{ scale: 1.5 }}
+                whileTap={{ scale: 1 }}
                 key={`link-${idx}`}
                 href={navItem.link}
                 className={cn(
-                  "relative flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-accent transition-colors hover:bg-neutral-100 hover:text-neutral-900 dark:text-neutral-300 dark:hover:bg-white/10 dark:hover:text-white"
+                  "relative flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-accent"
                 )}
               >
                 <span className="block sm:hidden">{navItem.icon}</span>
                 <span className="hidden sm:block">{navItem.name}</span>
-              </a>
+              </motion.a>
             ))}
           </div>
 

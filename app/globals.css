@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+@import "aos/dist/aos.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -119,10 +120,10 @@
 
 @layer base {
   * {
-    @apply border-border box-border m-0 p-0;
+    @apply box-border m-0 p-0;
   }
   body {
-    @apply bg-background text-foreground overflow-x-hidden;
+    @apply bg-foreground text-background overflow-x-hidden;
   }
   html {
     @apply font-space scroll-smooth;
@@ -133,7 +134,7 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: var(--background);
+    background: var(--foreground);
   }
 
   ::-webkit-scrollbar-thumb {
@@ -159,14 +160,12 @@
     font-weight: 600;
     padding: 0.75rem 2rem;
     border-radius: 0.5rem;
-    transition: all 0.3s ease;
     border: none;
     cursor: pointer;
     font-size: 1rem;
   }
 
   .btn-primary:hover {
-    transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(0, 255, 136, 0.4);
   }
 
@@ -176,7 +175,6 @@
     border: 2px solid var(--primary);
     padding: 0.75rem 2rem;
     border-radius: 0.5rem;
-    transition: all 0.3s ease;
     cursor: pointer;
     font-weight: 600;
     font-size: 1rem;
@@ -185,7 +183,6 @@
   .btn-outline:hover {
     background: var(--primary);
     color: var(--foreground);
-    transform: translateY(-2px);
     box-shadow: 0 10px 30px rgba(0, 255, 136, 0.4);
   }
   .glow-text {
@@ -193,13 +190,33 @@
       0 0 20px rgba(0, 255, 136, 0.5),
       0 0 40px rgba(0, 255, 136, 0.3);
   }
-  .card-hover {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  .about-card {
+    transition:
+      transform 0.3s ease,
+      border-color 0.3s ease;
+  }
+  .about-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+
+    background: radial-gradient(
+      600px circle at var(--x) var(--y),
+      rgba(59, 130, 246, 0.25),
+      transparent 40%
+    );
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
   }
 
-  .card-hover:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 255, 136, 0.2);
-    border-color: var(--primary);
+  .about-card:hover::before {
+    opacity: 1;
+  }
+  .about-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.2);
   }
 }

@@ -1,81 +1,75 @@
 'use client'
-
-import { useEffect, useState } from 'react'
 import { TypeAnimation } from "react-type-animation"
+import type { Variants } from "motion/react";
+import { motion, stagger } from 'motion/react'
 import { LuGithub, LuLinkedin } from "react-icons/lu";
 import { FaArrowDown } from "react-icons/fa";
 import { FiPhone } from "react-icons/fi";
 import { GoMail } from "react-icons/go";
 
 
+const MotionArrow = motion.create(FaArrowDown)
+
+const container: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            when: 'beforeChildren',
+            delayChildren: stagger(0.15),
+        }
+    }
+}
+const items: Variants = {
+    hidden: {
+        opacity: 0,
+        y: 40
+
+    },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            ease: 'easeOut',
+            duration: 0.25
+        }
+    }
+}
+
 const Hero = () => {
-    const [mounted, setMounted] = useState(false)
-
-    useEffect(() => {
-        setMounted(true)
-    }, [])
-
-    const scrollToContact = () => {
-        const element = document.querySelector('#contact')
-        if (element) {
-            const offset = 80
-            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
-            window.scrollTo({
-                top: elementPosition - offset,
-                behavior: 'smooth'
-            })
-        }
-    }
-
-    const scrollToProjects = () => {
-        const element = document.querySelector('#projects')
-        if (element) {
-            const offset = 80
-            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset
-            window.scrollTo({
-                top: elementPosition - offset,
-                behavior: 'smooth'
-            })
-        }
-    }
-
     return (
-        <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-            {/* Grid Pattern Background */}
-            <div className="absolute inset-0 grid-pattern opacity-30"></div>
-
+        <section id='hero' className="min-h-screen bg-foreground overflow-hidden pt-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="text-center">
-                    {/* Animated greeting */}
-                    <div
-                        className={`transform transition-all duration-1000 ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-                            }`}
+                <motion.div
+                    variants={container}
+                    initial='hidden'
+                    animate='visible'
+                    className="text-center">
+                    {/* Animated Greeting */}
+                    <motion.div
+                        variants={items}
                     >
                         <p className="text-primary font-mono text-lg mb-4">Hi, my name is</p>
-                    </div>
-
-                    <div
-                        className={`transform transition-all duration-1000 delay-200 ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-                            }`}
+                    </motion.div>
+                    <motion.div
+                        variants={items}
                     >
-                        <h1 className="hero-title text-5xl sm:text-6xl md:text-7xl font-bold mb-4">
+                        <h1 className="animate__animated animate__zoomInDown animate__slow text-4xl sm:text-6xl md:text-7xl font-bold mb-4">
                             <span className="glow-text">Umer Zafar</span>
                         </h1>
-                    </div>
-
+                    </motion.div>
                     {/* Title */}
-                    <div
-                        className={`transform transition-all duration-1000 delay-300 ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-                            }`}
+                    <motion.div
+                        variants={items}
                     >
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-400 mb-6">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-400 mb-6">
                             <TypeAnimation
                                 sequence={[
                                     'Full Stack Developer',
                                     2000,
-                                    'PERN Stack Specialist',
+                                    'Nextjs + Typescript Dev',
                                     2000,
-                                    'Next.js + Typescript Dev',
+                                    'PERN Stack Specialist',
                                     2000,
                                 ]}
                                 wrapper="span"
@@ -83,12 +77,11 @@ const Hero = () => {
                                 repeat={Infinity}
                             />
                         </h2>
-                    </div>
+                    </motion.div>
 
                     {/* Tagline */}
-                    <div
-                        className={`transform transition-all duration-1000 delay-500 ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-                            }`}
+                    <motion.div
+                        variants={items}
                     >
                         <p className="text-xl sm:text-2xl text-gray-400 max-w-3xl mx-auto mb-8">
                             I build <span className="text-primary font-semibold">scalable full-stack solutions</span> with the{' '}
@@ -98,25 +91,37 @@ const Hero = () => {
                             Specializing in PostgreSQL, Express.js, React.js, and Node.js to create efficient,
                             modern web applications that solve real-world problems
                         </p>
-                    </div>
+                    </motion.div>
 
                     {/* CTA Buttons */}
-                    <div
-                        className={`flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 transform transition-all duration-1000 delay-700 ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-                            }`}
+                    <motion.div
+                        variants={items}
+                        className='flex flex-col sm:flex-row gap-5 justify-center items-center mb-12'
                     >
-                        <button onClick={scrollToProjects} className="btn-primary w-full sm:w-auto">
+                        <motion.a
+                            whileHover={{ scale: 0.9, y: -2 }}
+                            whileTap={{ scale: 1, y: 0 }}
+                            transition={{ type: 'spring', stiffness: 300, damping: 7 }}
+                            href="#projects"
+                            className="btn-primary w-full sm:w-auto"
+                        >
                             View My Work
-                        </button>
-                        <button onClick={scrollToContact} className="btn-outline w-full sm:w-auto">
+                        </motion.a>
+                        <motion.a
+                            whileHover={{ scale: 0.9, y: -2 }}
+                            whileTap={{ scale: 1, y: 0 }}
+                            transition={{ type: 'spring', stiffness: 300, damping: 7 }}
+                            href="#contact"
+                            className="btn-outline w-full sm:w-auto"
+                        >
                             Get In Touch
-                        </button>
-                    </div>
+                        </motion.a>
+                    </motion.div>
 
                     {/* Social Links */}
-                    <div
-                        className={`flex gap-6 justify-center items-center transform transition-all duration-1000 delay-900 ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-                            }`}
+                    <motion.div
+                        variants={items}
+                        className='flex gap-6 justify-center items-center'
                     >
                         <a
                             href="https://github.com/umerzafar4598"
@@ -150,12 +155,23 @@ const Hero = () => {
                         >
                             <FiPhone size={28} />
                         </a>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
 
                 {/* Scroll Indicator */}
-                <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-                    <FaArrowDown className="text-primary" size={32} />
+                <div
+                    className="absolute bottom-12 left-1/2 -translate-x-1/2"
+                >
+                    <MotionArrow
+                        size={25}
+                        className="text-primary"
+                        animate={{ y: [0, 10, 0] }}
+                        transition={{
+                            duration: 1,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                        }}
+                    />
                 </div>
             </div>
         </section>
