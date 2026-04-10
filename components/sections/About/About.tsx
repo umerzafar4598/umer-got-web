@@ -32,7 +32,7 @@ const About = () => {
                 {/* Section Title */}
                 <div className='text-center mb-16'>
                     <h2 className="section-title text-4xl md:text-5xl font-bold mb-4">
-                        About <span className="text-primary">Me</span>
+                        About <span className="text-primary text-shadow-sm text-shadow-green-500">Me</span>
                     </h2>
                     <div className="w-20 h-1 bg-primary mx-auto"></div>
                 </div>

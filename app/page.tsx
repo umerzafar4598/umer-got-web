@@ -5,6 +5,7 @@ import { FloatingNav } from "@/components/ui/floating-navbar";
 import { navItems } from "@/data";
 import 'animate.css';
 import AosWrapper from "@/components/helper/AosWrapper";
+import SkillsSection from "@/components/sections/Skills/Skills";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <FloatingNav navItems={navItems} />
         <Hero />
         <About />
+        <SkillsSection />
       </AosWrapper>
     </main>
   );

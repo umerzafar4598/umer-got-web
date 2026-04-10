@@ -230,4 +230,21 @@
     transform: translateY(-6px);
     border-color: rgba(255, 255, 255, 0.2);
   }
+  /* Skill tag */
+  .skill-tag {
+    background: rgba(0, 255, 136, 0.1);
+    color: var(--primary);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .skill-tag:hover {
+    background: rgba(0, 255, 136, 0.2);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+  }
 }
