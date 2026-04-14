@@ -1,9 +1,5 @@
-"use client"
-
 import Marquee from "react-fast-marquee"
-// import { motion } from "motion/react"
 import Image from "next/image"
-// import type { Variants } from "motion/react";
 import { skillsData } from "@/data/index"
 import { skillImage } from "./SkillImage"
 import { Button } from "@/components/ui/moving-border"
@@ -71,9 +67,7 @@ export default function SkillsSection() {
                         ))}
                     </Marquee>
                 </div>
-                <div
-                    className='mt-12'
-                >
+                <div className='mt-12'>
                     <Button
                         duration={10000 + 10000}
                         className="p-8 text-center">

@@ -41,7 +41,7 @@ const Hero = () => {
     return (
         <section id='hero' className="min-h-screen bg-foreground overflow-hidden pt-20">
             <Spotlight
-                className="-top-40 left-0 md:-top-20 md:left-60"
+                className="-top-40 left-0 md:-top-70 md:left-60"
                 fill="cyan"
             />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
