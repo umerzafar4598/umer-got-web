@@ -4,16 +4,12 @@ import Marquee from "react-fast-marquee"
 // import { motion } from "motion/react"
 import Image from "next/image"
 // import type { Variants } from "motion/react";
-// import { useState } from "react"
-
 import { skillsData } from "@/data/index"
 import { skillImage } from "./SkillImage"
-
-
-
-
+import { Button } from "@/components/ui/moving-border"
 
 export default function SkillsSection() {
+
     return (
         <section
             id='skills'
@@ -78,7 +74,9 @@ export default function SkillsSection() {
                 <div
                     className='mt-12'
                 >
-                    <div className="bg-linear-to-r from-primary/10 to-accent/10 rounded-xl border border-primary/30 p-8 text-center">
+                    <Button
+                        duration={10000 + 10000}
+                        className="p-8 text-center">
                         <h3 className="text-2xl md:text-3xl  mb-4">
                             <span className="text-white">Specialized in </span>
                             <span className="text-primary">PERN</span>
@@ -94,10 +92,10 @@ export default function SkillsSection() {
                             Building end-to-end full-stack applications with modern JavaScript ecosystem,
                             robust database management, and scalable architecture
                         </p>
-                    </div>
+                    </Button>
                 </div>
             </div>
-        </section>
+        </section >
 
     )
 }

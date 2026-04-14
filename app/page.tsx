@@ -6,6 +6,7 @@ import { navItems } from "@/data";
 import 'animate.css';
 import AosWrapper from "@/components/helper/AosWrapper";
 import SkillsSection from "@/components/sections/Skills/Skills";
+import Projects from "@/components/sections/Projects/Projects";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <Hero />
         <About />
         <SkillsSection />
+        <Projects />
       </AosWrapper>
     </main>
   );

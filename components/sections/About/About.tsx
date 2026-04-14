@@ -88,7 +88,7 @@ const About = () => {
                                 <div className="text-sm text-gray-400 mt-1">Months</div>
                             </div>
                             <div className="text-center hover:shadow-[0_10px_60px_-15px_rgba(0,255,255)] transition-all duration-300 p-4 bg-white/5 rounded-lg border border-accent">
-                                <div className="text-3xl font-bold text-accent">2</div>
+                                <div className="text-3xl font-bold text-accent">3</div>
                                 <div className="text-sm text-gray-400 mt-1">Projects</div>
                             </div>
                             <div className="text-center hover:shadow-[0_10px_60px_-15px_rgba(0,255,136)] transition-all duration-300 p-4 bg-white/5 rounded-lg border border-primary">
