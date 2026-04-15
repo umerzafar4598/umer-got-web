@@ -14,12 +14,13 @@ export default function SkillsSection() {
             <div className="max-w-6xl mx-auto">
                 {/* Section Title */}
                 <div
+                    data-aos="fade-up"
                     className='text-center mb-16 transition-all duration-1000'
                 >
                     <h2
                         className="section-title text-4xl md:text-5xl font-bold mb-4"
                     >
-                        Technical <span className="text-primary text-shadow-sm text-shadow-green-500">Skills</span>
+                        Technical <span className="bg-linear-to-r from-primary via-accent to-primary bg-clip-text text-transparent tracking-wide">Skills</span>
                     </h2>
                     <div className="w-20 h-1 bg-primary mx-auto mb-4"></div>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto">
@@ -67,7 +68,7 @@ export default function SkillsSection() {
                         ))}
                     </Marquee>
                 </div>
-                <div className='mt-12'>
+                <div data-aos='zoom-in' className='mt-12'>
                     <Button
                         duration={10000 + 10000}
                         className="p-8 text-center">
@@ -82,7 +83,7 @@ export default function SkillsSection() {
                             <span className="skill-tag">React.js</span>
                             <span className="skill-tag">Node.js</span>
                         </div>
-                        <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
+                        <p className="text-gray-400 text-base mt-6 max-w-2xl mx-auto">
                             Building end-to-end full-stack applications with modern JavaScript ecosystem,
                             robust database management, and scalable architecture
                         </p>

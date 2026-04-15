@@ -30,9 +30,9 @@ const About = () => {
         >
             <div className="max-w-6xl mx-auto">
                 {/* Section Title */}
-                <div className='text-center mb-16'>
+                <div data-aos="fade-up" className='text-center mb-16'>
                     <h2 className="section-title text-4xl md:text-5xl font-bold mb-4">
-                        About <span className="text-primary text-shadow-sm text-shadow-green-500">Me</span>
+                        About <span className="bg-linear-to-r from-primary via-accent to-primary bg-clip-text text-transparent tracking-wide">Me</span>
                     </h2>
                     <div className="w-20 h-1 bg-primary mx-auto"></div>
                 </div>
@@ -43,7 +43,7 @@ const About = () => {
                         variants={containerCardVariant}
                         initial="hidden"
                         whileInView="show"
-                        viewport={{ once: true, amount: 0.2 }}
+                        viewport={{ once: true, amount: 0.5 }}
                         className='transition-all duration-1000 delay-200'
                     >
                         <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
@@ -82,7 +82,10 @@ const About = () => {
                         </div>
 
                         {/* Quick Stats */}
-                        <div className="grid grid-cols-3 gap-4 mt-8">
+                        <motion.div
+                            variants={cardVariants}
+                            className="grid grid-cols-3 gap-4 mt-8"
+                        >
                             <div className="text-center hover:shadow-[0_10px_60px_-15px_rgba(0,255,136)] transition-all duration-300 p-4 bg-white/5 rounded-lg border border-primary">
                                 <div className="text-3xl font-bold text-primary">6+</div>
                                 <div className="text-sm text-gray-400 mt-1">Months</div>
@@ -95,7 +98,7 @@ const About = () => {
                                 <div className="text-3xl font-bold text-primary">100%</div>
                                 <div className="text-sm text-gray-400 mt-1">Dedicated</div>
                             </div>
-                        </div>
+                        </motion.div>
                     </motion.div>
 
                     {/* Right Column - Values */}
