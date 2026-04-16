@@ -18,9 +18,8 @@ export interface Project {
     demo?: string | null;
     icon: React.JSX.Element;
     color: 'accent' | 'primary'
-
     image: string;
-    video: string;
+
 }
 
 export const projects: Project[] = [
@@ -50,7 +49,6 @@ export const projects: Project[] = [
         color: 'primary',
 
         image: ims.src,
-        video: 'videos/inventory.mp4',
     },
     {
         id: 2,
@@ -75,9 +73,7 @@ export const projects: Project[] = [
         demo: null,
         icon: <LuCircleCheckBig className="text-primary" size={32} />,
         color: 'accent',
-
         image: todo.src,
-        video: 'videos/todo.mp4',
 
     },
     {
@@ -103,8 +99,6 @@ export const projects: Project[] = [
         demo: 'https://assembly-endgame-lyart-iota.vercel.app',
         icon: <RiGamepadLine className="text-primary" size={32} />,
         color: 'primary',
-
         image: assembly.src,
-        video: 'videos/assembly.mp4',
     },
 ];
