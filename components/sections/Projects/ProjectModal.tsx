@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 
 import { IoIosCode } from "react-icons/io";
 import { FiGithub } from "react-icons/fi";
+import { IoMdClose } from "react-icons/io";
 
 interface Props {
     project: Project | null;
@@ -27,37 +28,20 @@ export default function ProjectModal({ project, onClose }: Props) {
                         animate={{ y: 0, opacity: 1, scale: 1 }}
                         exit={{ y: 40, opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="relative max-w-5xl w-full mx-4 max-h-[90vh] overflow-y-auto rounded-2xl border border-white/10 bg-[#0a0a0a] p-6"
+                        className="relative max-w-5xl w-full mx-4 max-h-[90vh] overflow-y-auto rounded-2xl border border-white/10 bg-[#0a0a0a] p-12"
                     >
                         {/* Close Button */}
                         <button
                             onClick={onClose}
                             className="absolute top-4 right-4 text-white/50 hover:text-white text-lg"
                         >
-                            ✕
+                            <IoMdClose
+                                size={25}
+                                className="text-primary hover:rotate-90 transition-all duration-300"
+                            />
                         </button>
                         <div>
                             <div className="project-card group">
-                                {/* 🎥 VIDEO SECTION */}
-                                {project.video && (
-                                    <div className="w-full">
-                                        <div className="p-px rounded-xl pb-3">
-                                            <motion.div
-                                                initial={{ opacity: 0, y: 20 }}
-                                                animate={{ opacity: 1, y: 0 }}
-                                                transition={{ duration: 0.8 }}
-                                                className="rounded-xl overflow-hidden bg-black">
-                                                <video
-                                                    src={project.video}
-                                                    controls
-                                                    className="w-full h-55 md:h-100 object-cover"
-                                                    poster={project.image}
-                                                />
-                                            </motion.div>
-                                        </div>
-                                    </div>
-                                )}
-
                                 <div className="grid md:grid-cols-3 gap-8 p-8">
                                     {/* Left Column - Project Info */}
                                     <div className="md:col-span-2 space-y-6">
