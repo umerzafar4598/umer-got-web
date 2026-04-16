@@ -1,4 +1,5 @@
 'use client'
+import SectionWrapper from "@/components/layout/SectionWrapper";
 import { useState } from "react";
 
 const experiences = [
@@ -44,8 +45,7 @@ export default function Experience() {
         <section
             id="experience"
             className="w-full py-20">
-            <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-
+            <SectionWrapper>
                 <div data-aos='fade-up' className="mb-10">
                     <p className="tracking-[4px] font-sans uppercase">
                         — Experience
@@ -164,7 +164,7 @@ export default function Experience() {
                         </div>
                     ))}
                 </div>
-            </div>
+            </SectionWrapper>
         </section>
     );
 }

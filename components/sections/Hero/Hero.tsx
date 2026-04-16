@@ -43,8 +43,8 @@ const Hero = () => {
         <section
             className="min-h-screen w-full bg-foreground overflow-hidden pt-20">
             <Spotlight
-                className="-top-50 left-0 md:-top-95 md:left-100"
-                fill="cyan"
+                className="-top-250 left-50 md:-top-175 md:left-60"
+                fill="#22d3ee"
             />
             <SectionWrapper>
                 <motion.div

@@ -8,6 +8,7 @@ import AosWrapper from "@/components/helper/AosWrapper";
 import SkillsSection from "@/components/sections/Skills/Skills";
 import Projects from "@/components/sections/Projects/Projects";
 import Experience from "@/components/sections/Experience/Experience";
+import MyApproach from "@/components/sections/MyApproach/MyApproach";
 
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
         <Experience />
         <SkillsSection />
         <Projects />
+        <MyApproach />
       </AosWrapper>
     </main>
   );
