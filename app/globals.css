@@ -137,7 +137,7 @@
     @apply bg-foreground text-background overflow-x-hidden;
   }
   html {
-    @apply font-space scroll-smooth;
+    @apply font-space scroll-smooth overflow-x-hidden;
   }
   /* Custom scrollbar */
   ::-webkit-scrollbar {
