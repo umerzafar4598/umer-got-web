@@ -32,7 +32,7 @@ export default function Projects() {
                 </h2>
 
                 <p className="max-w-2xl mx-auto text-xl text-white/70">
-                    Hover over the cards to see the 3D pin animation. Click to view full project details.
+                    Real-world applications built with the PERN stack, showcasing my skills in full-stack development.
                 </p>
             </div>
 
