@@ -19,7 +19,6 @@ export interface Project {
     icon: React.JSX.Element;
     color: 'accent' | 'primary'
     image: string;
-
 }
 
 export const projects: Project[] = [
@@ -47,7 +46,6 @@ export const projects: Project[] = [
         demo: null,
         icon: <FiDatabase className="text-accent" size={32} />,
         color: 'primary',
-
         image: ims.src,
     },
     {
@@ -74,7 +72,6 @@ export const projects: Project[] = [
         icon: <LuCircleCheckBig className="text-primary" size={32} />,
         color: 'accent',
         image: todo.src,
-
     },
     {
         id: 3,
