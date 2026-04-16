@@ -71,7 +71,7 @@ export const FloatingNav = ({
                 )}
               >
                 <span className="block sm:hidden">{navItem.icon}</span>
-                <span className="hidden sm:block">{navItem.name}</span>
+                <span className="sm:block">{navItem.name}</span>
               </motion.a>
             ))}
           </div>

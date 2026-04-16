@@ -7,6 +7,7 @@ import { LuGithub, LuLinkedin } from "react-icons/lu";
 import { FaArrowDown } from "react-icons/fa";
 import { FiPhone } from "react-icons/fi";
 import { GoMail } from "react-icons/go";
+import SectionWrapper from "@/components/layout/SectionWrapper";
 
 
 const MotionArrow = motion.create(FaArrowDown)
@@ -39,12 +40,13 @@ const items: Variants = {
 
 const Hero = () => {
     return (
-        <section id='hero' className="min-h-screen bg-foreground overflow-hidden pt-20">
+        <section
+            className="min-h-screen w-full bg-foreground overflow-hidden pt-20">
             <Spotlight
-                className="-top-40 left-0 md:-top-70 md:left-60"
+                className="-top-50 left-0 md:-top-95 md:left-100"
                 fill="cyan"
             />
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <SectionWrapper>
                 <motion.div
                     variants={container}
                     initial='hidden'
@@ -101,7 +103,7 @@ const Hero = () => {
                     {/* CTA Buttons */}
                     <motion.div
                         variants={items}
-                        className='flex flex-col sm:flex-row gap-5 justify-center items-center mb-12'
+                        className='flex flex-col sm:flex-row gap-5 justify-center items-center mb-4'
                     >
                         <motion.a
                             whileHover={{ scale: 0.9, y: -2 }}
@@ -122,11 +124,24 @@ const Hero = () => {
                             Get In Touch
                         </motion.a>
                     </motion.div>
+                    {/* Scroll Indicator */}
+                    <div className="flex justify-center">
+                        <MotionArrow
+                            size={25}
+                            className="text-primary"
+                            animate={{ y: [0, 10, 0] }}
+                            transition={{
+                                duration: 1,
+                                repeat: Infinity,
+                                ease: "easeInOut"
+                            }}
+                        />
+                    </div>
 
                     {/* Social Links */}
                     <motion.div
                         variants={items}
-                        className='flex gap-6 justify-center items-center'
+                        className='flex gap-6 pt-3 justify-center items-center'
                     >
                         <a
                             href="https://github.com/umerzafar4598"
@@ -163,22 +178,7 @@ const Hero = () => {
                     </motion.div>
                 </motion.div>
 
-                {/* Scroll Indicator */}
-                <div
-                    className="absolute bottom-12 left-1/2 -translate-x-1/2"
-                >
-                    <MotionArrow
-                        size={25}
-                        className="text-primary"
-                        animate={{ y: [0, 10, 0] }}
-                        transition={{
-                            duration: 1,
-                            repeat: Infinity,
-                            ease: "easeInOut"
-                        }}
-                    />
-                </div>
-            </div>
+            </SectionWrapper>
         </section>
     )
 }

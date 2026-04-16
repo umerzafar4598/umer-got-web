@@ -5,6 +5,7 @@ import { motion } from 'motion/react'
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import type { Variants } from "motion/react";
 import { stagger } from "motion";
+import SectionWrapper from "@/components/layout/SectionWrapper";
 
 const containerCardVariant: Variants = {
     hidden: {},
@@ -26,9 +27,8 @@ const About = () => {
     return (
         <section
             id="about"
-            className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
-        >
-            <div className="max-w-6xl mx-auto">
+            className="w-full py-20 relative overflow-hidden">
+            <SectionWrapper>
                 {/* Section Title */}
                 <div data-aos="fade-up" className='text-center mb-16'>
                     <h2 className="section-title text-4xl md:text-5xl font-bold mb-4">
@@ -164,7 +164,7 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </SectionWrapper>
         </section>
     )
 }

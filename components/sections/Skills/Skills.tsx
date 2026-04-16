@@ -3,15 +3,16 @@ import Image from "next/image"
 import { skillsData } from "@/data/index"
 import { skillImage } from "./SkillImage"
 import { Button } from "@/components/ui/moving-border"
+import SectionWrapper from "@/components/layout/SectionWrapper"
 
 export default function SkillsSection() {
 
     return (
         <section
-            id='skills'
-            className='py-20 px-4 sm:px-6 lg:px-8 bg-black/30 relative overflow-hidden'
+            id="skills"
+            className="w-full py-20 bg-black/30 relative overflow-hidden"
         >
-            <div className="max-w-6xl mx-auto">
+            <SectionWrapper>
                 {/* Section Title */}
                 <div
                     data-aos="fade-up"
@@ -30,7 +31,7 @@ export default function SkillsSection() {
                 {/* Marquee */}
                 <div
                     data-aos="zoom-out-up"
-                    className="w-full my-7">
+                    className="w-full my-7 overflow-hidden">
                     <Marquee
                         gradient={false}
                         speed={80}
@@ -56,7 +57,9 @@ export default function SkillsSection() {
                                                 alt={skill.name}
                                                 width={0}
                                                 height={0}
-                                                className="h-full w-auto rounded-lg"
+                                                sizes="100vw"
+                                                loading="eager"
+                                                className="h-8 sm:h-10 w-auto rounded-lg"
                                             />
                                         </div>
                                         <p className="text-white text-sm sm:text-lg">
@@ -89,7 +92,7 @@ export default function SkillsSection() {
                         </p>
                     </Button>
                 </div>
-            </div>
+            </SectionWrapper>
         </section >
 
     )
