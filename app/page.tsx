@@ -10,6 +10,7 @@ import Projects from "@/components/sections/Projects/Projects";
 import Experience from "@/components/sections/Experience/Experience";
 import MyApproach from "@/components/sections/MyApproach/MyApproach";
 import Contact from "@/components/sections/Contact/Contact";
+import Footer from "@/components/sections/Footer/Footer";
 
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
         <Projects />
         <MyApproach />
         <Contact />
+        <Footer />
       </AosWrapper>
     </main>
   );

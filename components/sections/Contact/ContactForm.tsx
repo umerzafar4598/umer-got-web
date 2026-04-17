@@ -38,7 +38,7 @@ const ContactForm = () => {
         if (state.success === false) {
             toast.error(state.message);
         }
-    }, [state.success, state.message]);
+    }, [state]);
     return (
         <div className="bg-white/5 rounded-xl border border-white/10 p-8">
             <h3 className="text-2xl font-bold text-white mb-6">Send Me a Message</h3>

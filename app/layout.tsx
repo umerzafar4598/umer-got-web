@@ -3,6 +3,7 @@ import { Geist, Space_Grotesk } from "next/font/google";
 import { Toaster } from 'react-hot-toast'
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import ScrollToTop from "@/components/helper/ScrollToTop";
 
 const spaceGrotesk = Space_Grotesk({
   variable: '--font-spaceGrotesk',
@@ -42,6 +43,7 @@ export default function RootLayout({
           }}
         />
         {children}
+        <ScrollToTop />
       </body>
     </html>
   );
