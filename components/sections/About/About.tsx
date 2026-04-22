@@ -44,7 +44,6 @@ const About = () => {
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true, amount: 0.5 }}
-                        className='transition-all duration-1000 delay-200'
                     >
                         <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
                             <motion.p

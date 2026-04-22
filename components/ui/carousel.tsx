@@ -1,11 +1,38 @@
 "use client";
 import { IconArrowNarrowRight } from "@tabler/icons-react";
 import { useState, useRef, useId, useEffect } from "react";
+import { motion, stagger } from 'motion/react'
+import type { Variants } from "motion/react";
+
+
+const containerVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      when: 'beforeChildren',
+      delayChildren: stagger(0.25),
+    },
+  },
+};
+
+const slideVariants: Variants = {
+  hidden: {
+    scale: 0.85,
+  },
+  visible: {
+    scale: 1,
+    transition: {
+      ease: "easeOut",
+      duration: 0.4,
+    },
+  },
+};
+
 
 interface SlideData {
   title: string;
   src: string;
-  content?: React.ReactNode; // 🔥 ADD THIS
+  content?: React.ReactNode;
 }
 
 interface SlideProps {
@@ -66,8 +93,9 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
 
   return (
     <div className="[perspective:1200px] [transform-style:preserve-3d]">
-      <li
+      <motion.li
         ref={slideRef}
+        variants={slideVariants}
         className="flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-300 ease-in-out w-[70vmin] h-[70vmin] mx-[4vmin] z-10 "
         onClick={() => handleSlideClick(index)}
         onMouseMove={handleMouseMove}
@@ -107,7 +135,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
         </div>
 
         {current === index && slide.content}
-      </li>
+      </motion.li>
     </div>
   );
 };
@@ -165,7 +193,11 @@ export default function Carousel({ slides }: CarouselProps) {
       className="relative w-[70vmin] h-[70vmin] mx-auto"
       aria-labelledby={`carousel-heading-${id}`}
     >
-      <ul
+      <motion.ul
+        variants={containerVariants}
+        initial="hidden"
+        whileInView='visible'
+        viewport={{ once: true, amount: 0.2 }}
         className="absolute flex mx-[-4vmin] transition-transform duration-1000 ease-in-out"
         style={{
           transform: `translateX(-${current * (100 / slides.length)}%)`,
@@ -180,7 +212,7 @@ export default function Carousel({ slides }: CarouselProps) {
             handleSlideClick={handleSlideClick}
           />
         ))}
-      </ul>
+      </motion.ul>
 
       <div className="absolute flex justify-center w-full top-[calc(100%+1rem)]">
         <CarouselControl

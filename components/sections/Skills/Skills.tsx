@@ -30,7 +30,7 @@ export default function SkillsSection() {
                 </div>
                 {/* Marquee */}
                 <div
-                    data-aos="zoom-out-up"
+                    data-aos="zoom-in-down"
                     className="w-full my-7 overflow-hidden">
                     <Marquee
                         gradient={false}
@@ -44,7 +44,7 @@ export default function SkillsSection() {
                         {skillsData.map((skill) => (
                             <div className="w-36 min-w-fit h-fit flex flex-col items-center justify-center transition-all duration-500 m-3 sm:m-5 rounded-lg group relative hover:scale-[1.15] cursor-pointer"
                                 key={skill.name}>
-                                <div className="h-full w-full rounded-lg border border-[#273c1f] bg-white/5 shadow-none shadow-gray-50 group-hover:border-primary transition-all duration-500">
+                                <div className="h-full w-full rounded-lg border border-[#273c1f] bg-accent/10 shadow-none shadow-gray-50 group-hover:border-primary transition-all duration-500">
                                     <div className="flex -translate-y-px justify-center">
                                         <div className="w-3/4">
                                             <div className="h-px w-full bg-linear-to-r from-transparent primary to-transparent" />
@@ -71,10 +71,14 @@ export default function SkillsSection() {
                         ))}
                     </Marquee>
                 </div>
-                <div data-aos='zoom-in' className='mt-12'>
+                <div
+                    data-aos='zoom-in'
+                    data-aos-anchor-placement="bottom-bottom"
+                    className='mt-12'
+                >
                     <Button
-                        duration={10000 + 10000}
-                        className="p-8 text-center">
+                        duration={10000}
+                        className="p-8 text-center bg-primary/10">
                         <h3 className="text-2xl md:text-3xl  mb-4">
                             <span className="text-white">Specialized in </span>
                             <span className="text-primary">PERN</span>

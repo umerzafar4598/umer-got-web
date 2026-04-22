@@ -24,10 +24,11 @@ export default function Projects() {
 
     return (
         <section id="projects" className="w-full py-24 relative">
-            {/* Heading */}
             <SectionWrapper>
+                {/* Heading */}
                 <div
-                    data-aos='fade-up'
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="bottom-bottom"
                     className="text-center mb-20">
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-6">
                         Featured <span className="bg-linear-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Projects</span>
@@ -39,7 +40,9 @@ export default function Projects() {
                 </div>
 
                 {/* Carousel */}
-                <div className="w-full">
+                <div
+                    className="w-full"
+                >
                     <Carousel slides={slides} />
                 </div>
 

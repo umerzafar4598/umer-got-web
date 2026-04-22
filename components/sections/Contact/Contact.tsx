@@ -29,7 +29,11 @@ const Contact = () => {
         >
             <SectionWrapper>
                 {/* Section Title */}
-                <div className="text-center mb-16">
+                <div
+                    data-aos="fade-up"
+
+                    className="text-center mb-16"
+                >
                     <h2 className="section-title text-4xl md:text-5xl font-bold mb-4">
                         Get In{" "}
                         <span className="bg-linear-to-r from-primary via-accent to-primary bg-clip-text text-transparent tracking-wide">

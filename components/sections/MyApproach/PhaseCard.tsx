@@ -3,24 +3,27 @@
 import { useState } from "react";
 import { Phase } from "./PhaseData";
 import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
-import { AnimatePresence, motion } from "motion/react";
-
+import { AnimatePresence, motion, } from "motion/react";
+import { type Variants } from "motion";
 
 const PhaseCard = ({
     phase,
     onClick,
+    variant,
 }: {
     phase: Phase;
     onClick: () => void;
+    variant: Variants
 }) => {
     const [hovered, setHovered] = useState(false);
 
     return (
-        <div
+        <motion.div
+            variants={variant}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             onClick={onClick}
-            className="relative group border border-white/10 rounded-2xl overflow-hidden cursor-pointer h-85 flex flex-col justify-end transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/40"
+            className="relative group border border-white/10 rounded-2xl shadow-md shadow-lime-500 overflow-hidden cursor-pointer h-85 flex flex-col justify-end  hover:shadow-2xl hover:shadow-black/40"
         >
             {/* Canvas reveal — shown on hover */}
             <AnimatePresence>
@@ -89,7 +92,7 @@ const PhaseCard = ({
                     </svg>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

@@ -1,10 +1,35 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from 'motion/react'
+import { stagger, type Variants } from "motion";
 
 import { Phase, phases } from "./PhaseData";
 import PhaseCard from "./PhaseCard";
 import PhaseModal from "./PhaseModal";
+
+export const containerVariant: Variants = {
+    hidden: {},
+    visible: {
+        transition: {
+            when: "beforeChildren",
+            delayChildren: stagger(0.8),
+        }
+    }
+}
+
+export const cardVariant: Variants = {
+    hidden: { opacity: 0, y: -50 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            type: 'spring',
+            damping: 7,
+            stiffness: 200
+        }
+    }
+}
 
 
 export default function MyApproach() {
@@ -14,7 +39,11 @@ export default function MyApproach() {
         <section className="py-24 px-4 bg-[#080808]">
             <div className="max-w-5xl mx-auto">
                 {/* Section header */}
-                <div data-aos='fade-up' className="mb-10 space-y-2.5">
+                <div
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="bottom-bottom"
+                    className="mb-10 space-y-2.5"
+                >
                     <p className="tracking-[4px] font-sans uppercase">
                         — My Approach
                     </p>
@@ -30,18 +59,25 @@ export default function MyApproach() {
                 </div>
 
                 {/* Cards grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <motion.div
+                    variants={containerVariant}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.3 }}
+                    className="grid grid-cols-1 md:grid-cols-3 gap-5"
+                >
                     {phases.map((phase) => (
                         <PhaseCard
                             key={phase.id}
                             phase={phase}
                             onClick={() => setActivePhase(phase)}
+                            variant={cardVariant}
                         />
                     ))}
-                </div>
+                </motion.div>
 
                 {/* Hover hint */}
-                <p className="mt-5 text-center text-xs text-white/20 font-mono tracking-widest uppercase">
+                <p className="mt-10 text-center text-xs text-white/45 font-mono tracking-widest uppercase">
                     Hover to reveal · Click to explore
                 </p>
             </div>
