@@ -60,7 +60,8 @@ const PhaseModal = ({
                     {/* Close button */}
                     <button
                         onClick={onClose}
-                        className="absolute top-4 right-4 p-2 rounded-full bg-transparent text-accent"
+                        className="absolute top-4 right-4 p-2 rounded-full bg-transparent"
+                        style={{ color: `rgb(${phase.colors[0].join(",")})` }}
                     >
                         <IoMdClose className="w-8 h-8 hover:rotate-90 transition-all duration-300 cursor-pointer" />
                     </button>
