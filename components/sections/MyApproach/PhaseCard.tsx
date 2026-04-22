@@ -23,7 +23,7 @@ const PhaseCard = ({
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             onClick={onClick}
-            className="relative group border border-white/10 rounded-2xl shadow-md shadow-lime-500 overflow-hidden cursor-pointer h-85 flex flex-col justify-end  hover:shadow-2xl hover:shadow-black/40"
+            className="relative group border border-white/10 rounded-2xl shadow-md shadow-primary overflow-hidden cursor-pointer h-85 flex flex-col justify-end"
         >
             {/* Canvas reveal — shown on hover */}
             <AnimatePresence>
