@@ -54,7 +54,7 @@ export const projects: Project[] = [
         description: 'A comprehensive task management application with user authentication, allowing users to create, update, delete, and manage their personal todos with a clean and intuitive interface.',
         problem: 'Many todo apps lack proper user authentication and data isolation, making it difficult for multiple users to manage their tasks securely on the same platform.',
         solution: 'Built a full-stack solution with separate user authentication, ensuring each user has their own secure workspace with complete CRUD operations for task management.',
-        techStack: ['PostgreSQL', 'Express.js', 'React.js', 'Node.js', 'Session Auth', 'RESTful API'],
+        techStack: ['Nextjs', 'PostgreSQL', 'Better-Auth', 'Drizzle ORM', 'Redux Toolkit', 'Tailwindcss'],
         features: [
             'User registration and login with session-based authentication',
             'Complete CRUD operations for todos',
@@ -67,7 +67,7 @@ export const projects: Project[] = [
             'Ensuring proper data isolation between users',
             'Managing state across components efficiently',
         ],
-        github: 'https://github.com/umerzafar4598/Full-Stack-Todo-App',
+        github: 'https://github.com/umerzafar4598/nextjs-todo-list-app',
         demo: null,
         icon: <LuCircleCheckBig className="text-primary" size={32} />,
         color: 'accent',
