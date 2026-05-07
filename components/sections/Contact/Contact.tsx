@@ -138,7 +138,7 @@ const Contact = () => {
                             </p>
 
                             <a
-                                href="/umer-zafar-resume.pdf"
+                                href="/umer_zafar_resume.pdf"
                                 download
                                 className="btn-primary inline-flex items-center gap-2 hover:-translate-y-1.5 transition-all duration-300"
                             >
