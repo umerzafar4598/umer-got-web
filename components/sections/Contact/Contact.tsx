@@ -42,7 +42,7 @@ const itemVariants: Variants = {
         opacity: 1,
         y: 0,
         transition: {
-            duration: 0.6,
+            duration: 0.5,
             ease: "easeOut",
         },
     },
@@ -54,7 +54,7 @@ const titleVariants: Variants = {
         opacity: 1,
         y: 0,
         transition: {
-            duration: 0.7,
+            duration: 0.5,
             ease: "easeOut",
         },
     },
