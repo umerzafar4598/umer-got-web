@@ -41,9 +41,9 @@ const items: Variants = {
 const Hero = () => {
     return (
         <section
-            className="min-h-screen w-full bg-foreground overflow-hidden pt-20">
+            className="min-h-screen w-full bg-foreground overflow-hidden pt-20 relative">
             <Spotlight
-                className="-top-350 left-20 md:-top-220 md:left-70"
+                className="-top-5 left-50 md:-top-5 md:left-80"
                 fill="#22d3ee"
             />
             <SectionWrapper>
