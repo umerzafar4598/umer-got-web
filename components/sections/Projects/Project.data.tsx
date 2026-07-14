@@ -8,6 +8,7 @@ import commingSoon from "@/assets/projects-image/comming_soon.png"
 export interface projectLinks {
     title: string;
     url: string;
+    target?: string;
 }
 
 export interface Project {
@@ -49,7 +50,8 @@ export const defaultProjects: Project[] = [
         links: [
             {
                 title: 'Source Code',
-                url: 'https://github.com/umerzafar4598/hmc_inventory_mangement'
+                url: 'https://github.com/umerzafar4598/hmc_inventory_mangement',
+                target: '_blank',
             }
         ]
     },
@@ -77,8 +79,16 @@ export const defaultProjects: Project[] = [
         ],
         image: todo,
         links: [
-            { title: 'Source Code', url: 'https://github.com/umerzafar4598/nextjs-todo-list-app' },
-            { title: 'Live Demo', url: 'https://full-stack-todo-app-seven-flax.vercel.app' }
+            {
+                title: 'Source Code',
+                url: 'https://github.com/umerzafar4598/nextjs-todo-list-app',
+                target: '_blank',
+            },
+            {
+                title: 'Live Demo',
+                url: 'https://full-stack-todo-app-seven-flax.vercel.app',
+                target: '_blank',
+            }
         ]
     },
     {
@@ -101,8 +111,16 @@ export const defaultProjects: Project[] = [
         ],
         image: assembly,
         links: [
-            { title: 'Source Code', url: 'https://github.com/umerzafar4598/assembly_endgame' },
-            { title: 'Live Demo', url: 'https://assembly-endgame-lyart-iota.vercel.app/' }
+            {
+                title: 'Source Code',
+                url: 'https://github.com/umerzafar4598/assembly_endgame',
+                target: '_blank',
+            },
+            {
+                title: 'Live Demo',
+                url: 'https://assembly-endgame-lyart-iota.vercel.app/',
+                target: '_blank',
+            }
         ]
     },
     {
@@ -125,5 +143,8 @@ export const defaultProjects: Project[] = [
             'Drizzle ORM',
         ],
         image: commingSoon,
+        links: [
+            { title: "Let's discuss your project.", url: '#contact' }
+        ]
     },
 ];

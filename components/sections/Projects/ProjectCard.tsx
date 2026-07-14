@@ -198,7 +198,7 @@ export default function ProjectCard({ project, index, isEvenLayout }: ProjectCar
                                     key={i}
                                     whileHover={{ x: 5 }}
                                     href={link.url}
-                                    target="_blank"
+                                    target={link.target ? link.target : "_self"}
                                     className="flex items-center gap-2 text-primary font-semibold  w-fit mt-4"
                                 >
                                     {link.title}

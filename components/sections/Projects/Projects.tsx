@@ -1,5 +1,5 @@
 
-import ProjectCard from "./newProjectCard";
+import ProjectCard from "./ProjectCard";
 import { defaultProjects } from "./Project.data";
 
 

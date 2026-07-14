@@ -11,6 +11,7 @@ import Experience from "@/components/sections/Experience/Experience";
 import MyApproach from "@/components/sections/MyApproach/MyApproach";
 import Contact from "@/components/sections/Contact/Contact";
 import Footer from "@/components/sections/Footer/Footer";
+import MyServices from "@/components/sections/Services/services";
 
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
         <SkillsSection />
         <Projects />
         <MyApproach />
+        <MyServices />
         <Contact />
         <Footer />
       </AosWrapper>
