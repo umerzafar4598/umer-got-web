@@ -25,7 +25,7 @@ export interface Project {
 export const defaultProjects: Project[] = [
     {
         id: '1',
-        title: 'HMC Inventory Management System',
+        title: 'Inventory Management System',
         description:
             'A complete Point of Sale (POS) system designed for a Pakistani mobile shop, featuring inventory tracking, sales management, customer records, and comprehensive business analytics.',
         details: [

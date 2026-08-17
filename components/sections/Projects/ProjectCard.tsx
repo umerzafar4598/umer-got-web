@@ -132,7 +132,7 @@ export default function ProjectCard({ project, index, isEvenLayout }: ProjectCar
                     {/* Title */}
                     <motion.h3
                         variants={titleVariants}
-                        className={`text-2xl lg:text-3xl font-bold leading-tight ${isEvenLayout ? 'text-accent' : 'text-primary'}
+                        className={`text-2xl lg:text-4xl font-bold leading-tight ${isEvenLayout ? 'text-primary' : 'text-accent'}
                         `}>
                         {project.title}
                     </motion.h3>
@@ -160,7 +160,7 @@ export default function ProjectCard({ project, index, isEvenLayout }: ProjectCar
                                         delay: index * 0.1 + 0.3 + i * 0.05,
                                         type: 'spring',
                                     }}
-                                    className="shrink-0 w-5 h-5 rounded-full bg-primary flex items-center justify-center mt-1"
+                                    className={`shrink-0 w-5 h-5 rounded-full ${isEvenLayout ? 'bg-primary' : 'bg-accent'} flex items-center justify-center mt-1`}
                                 >
                                     <span className="text-slate-900 text-xs font-bold">
                                         ✓
@@ -176,14 +176,14 @@ export default function ProjectCard({ project, index, isEvenLayout }: ProjectCar
                         initial={{ opacity: 0, y: 10 }}
                         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
                         transition={{ delay: index * 0.1 + 0.4 }}
-                        className="flex flex-wrap gap-2 pt-4"
+                        className="flex flex-wrap gap-4 pt-4"
                     >
                         {project.technologies.map((tech, i) => (
                             <motion.span
-                                whileHover={{ scale: 1.05, y: -2 }}
-                                transition={{ type: 'spring', stiffness: 300 }}
+                                whileHover={{ scale: 1.15, y: -2 }}
+                                transition={{ type: 'spring', stiffness: 900 }}
                                 key={tech}
-                                className="px-3 py-1 text-xs lg:text-sm font-medium hover:text-primary bg-white/5 rounded-lg border border-blue-200 hover:border-primary transition-colors cursor-default"
+                                className={`px-3 py-1 text-xs lg:text-sm font-medium  bg-white/5 rounded-lg border border-blue-200 ${isEvenLayout ? 'hover:border-primary' : 'hover:border-accent'} ${isEvenLayout ? 'hover:text-primary' : 'hover:text-accent'} transition-colors cursor-default`}
                             >
                                 {tech}
                             </motion.span>
@@ -199,7 +199,7 @@ export default function ProjectCard({ project, index, isEvenLayout }: ProjectCar
                                     whileHover={{ x: 5 }}
                                     href={link.url}
                                     target={link.target ? link.target : "_self"}
-                                    className="flex items-center gap-2 text-primary font-semibold  w-fit mt-4"
+                                    className={`flex items-center gap-2 ${isEvenLayout ? 'text-primary' : 'text-accent'} font-semibold  w-fit mt-4`}
                                 >
                                     {link.title}
                                     <motion.svg
