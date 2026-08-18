@@ -52,6 +52,11 @@ export const defaultProjects: Project[] = [
                 title: 'Source Code',
                 url: 'https://github.com/umerzafar4598/hmc_inventory_mangement',
                 target: '_blank',
+            },
+            {
+                title: 'Live Demo',
+                url: 'https://hmc-inventory-mangement.vercel.app',
+                target: '_blank',
             }
         ]
     },
