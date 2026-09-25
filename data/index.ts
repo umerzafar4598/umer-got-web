@@ -1,8 +1,15 @@
+import UserRound from "@/assets/Icons/user-round.svg"
+import Kanban from "@/assets/Icons/kanban.svg"
+import Wrench from "@/assets/Icons/wrench.svg"
+import UserPen from "@/assets/Icons/user-pen.svg"
+
+
+
 export const navItems = [
-    { name: "About", link: "#about" },
-    { name: "Projects", link: "#projects" },
-    { name: "Services", link: "#services" },
-    { name: "Contact", link: "#contact" },
+    { name: "About", link: "#about", icon: UserRound },
+    { name: "Projects", link: "#projects", icon: Kanban },
+    { name: "Services", link: "#services", icon: Wrench },
+    { name: "Contact", link: "#contact", icon: UserPen },
 ];
 
 export type Skill = {

@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
+import type React from "react";
 import {
   motion,
   AnimatePresence,
@@ -7,6 +8,8 @@ import {
   useMotionValueEvent,
 } from "motion/react";
 import { cn } from "@/lib/utils";
+import Image, { StaticImageData } from "next/image";
+
 
 export const FloatingNav = ({
   navItems,
@@ -15,7 +18,7 @@ export const FloatingNav = ({
   navItems: {
     name: string;
     link: string;
-    icon?: React.JSX.Element;
+    icon?: StaticImageData | string;
   }[];
   className?: string;
 }) => {
@@ -67,13 +70,29 @@ export const FloatingNav = ({
                 key={`link-${idx}`}
                 href={navItem.link}
                 className={cn(
-                  "relative flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-accent"
+                  "relative flex items-center gap-1 rounded-full px-4 max-xs:px-2 py-2 text-sm max-xs:text-xs font-medium text-accent"
                 )}
               >
-                <span className="block sm:hidden">{navItem.icon}</span>
-                <span className="sm:block">{navItem.name}</span>
+                <span className="hidden sm:block">
+                  {
+                    navItem.icon && (
+                      <Image
+                        src={navItem.icon}
+                        alt={navItem.name}
+                        width={16}
+                        height={16}
+                        className="w-4 h-4 dark:invert"
+                      />
+                    )
+                  }
+                </span>
+                <span className="sm:block">
+                  {navItem.name}
+
+                </span>
               </motion.a>
-            ))}
+            )
+            )}
           </div>
 
           {/* Divider */}
