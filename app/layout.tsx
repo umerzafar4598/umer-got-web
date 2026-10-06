@@ -63,6 +63,12 @@ export const metadata: Metadata = {
       "Portfolio of Umer Zafar, a full-stack developer specializing in React, Next.js, Node.js, PostgreSQL, and modern web applications.",
     siteName: "Umer Zafar Portfolio",
     locale: "en_US",
+    images: [{
+      url: "./opengraph-image.png",
+      width: 1200,
+      height: 630,
+      alt: "Umer Zafar Portfolio image Preview"
+    }]
   },
 
   twitter: {
